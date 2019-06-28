@@ -18,8 +18,12 @@ I have simply prevented the Watch process from kicking off by using a null objec
     {
         return ichnge;
     }
-    
+        
 I recommend that this should be the entrance for your custom stub without having to rebuild parts of the whole ecosystem for .Net Core or heh, at least that's what I would do. With this you have the added benefit of being able to run Kestrel on FreeBSD as well.
+
+An [IChangeToken](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.primitives.ichangetoken?view=aspnetcore-2.2) therefore can register any custom callbacks.
+
+    public IDisposable RegisterChangeCallback (Action<object> callback, object state);
 
 You can see that the .csproj file is running netcoreapp30 and this is because I am using a bit of a frakenstein release I threw together myself- the instructions can be found on my post [How to build .Net Core on FreeBSD by moving files around](https://dev.to/wolfspidercode/how-to-build-net-core-on-freebsd-by-moving-files-around-53do)
 
