@@ -24,6 +24,10 @@ I recommend that this should be the entrance for your custom stub without having
 An [IChangeToken](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.primitives.ichangetoken?view=aspnetcore-2.2) therefore can register any custom callbacks.
 
     public IDisposable RegisterChangeCallback (Action<object> callback, object state);
+    
+You will know that it's working because an error message will be thrown if it cannot find the static file path- this should be replaced with a file path which actually exists on your system.
+
+    FileProvider = new PhysicalFileProviderAdapter("/home/lizardking/Downloads/dotnet-sdk/RunHostCore/home")
 
 You can see that the .csproj file is running netcoreapp30 and this is because I am using a bit of a frakenstein release I threw together myself- the instructions can be found on my post [How to build .Net Core on FreeBSD by moving files around](https://dev.to/wolfspidercode/how-to-build-net-core-on-freebsd-by-moving-files-around-53do)
 
