@@ -33,3 +33,4 @@ You can see that the .csproj file is running netcoreapp30 and this is because I 
 
 It will need the 2.2 SDK and by using Preview 3 NuGet has been able to download the required dependencies. 
 
+Although this is not on the roadmap for 3 right now this code was thrown together in reference of this [issue](https://github.com/dotnet/corefx/issues/2046)
